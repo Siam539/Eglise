@@ -109,6 +109,7 @@ body {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -442,18 +443,24 @@ body {
 }
 
 @keyframes pulse-live {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.05);
     }
 }
 
 @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
@@ -964,16 +971,19 @@ body {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { 
-        transform: translateY(0px) rotate(0deg); 
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
     }
-    50% { 
-        transform: translateY(-10px) rotate(5deg); 
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
     }
 }
 
@@ -1119,7 +1129,7 @@ body {
     right: 0;
     bottom: 0;
     border-radius: var(--border-radius-xl);
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
     pointer-events: none;
 }
 
@@ -1386,18 +1396,18 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .whatsapp-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .contact-section-top,
     .map-section-full {
         padding: 3rem;
     }
-    
+
     .map-wrapper-full iframe {
         height: 400px;
     }
@@ -1412,13 +1422,13 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-    
+
     .map-container {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .footer-map {
         height: 350px;
     }
@@ -1427,11 +1437,11 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
+
     .gallery-item-image {
         height: 250px;
     }
-    
+
     .gallery-item-content {
         padding: 1.5rem;
     }
@@ -1481,30 +1491,30 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .whatsapp-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         text-align: center;
     }
-    
+
     .whatsapp-btn-large {
         padding: 1rem 2rem;
         font-size: 1rem;
     }
-    
+
     .contact-section-top,
     .map-section-full {
         padding: 2rem;
     }
-    
+
     .contact-info-modern h3,
     .map-header-modern h3 {
         font-size: 1.75rem;
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .map-wrapper-full iframe {
         height: 350px;
     }
@@ -1513,20 +1523,20 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .footer-section {
         text-align: center;
     }
-    
+
     .footer-social {
         justify-content: center;
     }
-    
+
     .footer-bottom-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
         flex-wrap: wrap;
@@ -1542,11 +1552,11 @@ body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .gallery-item-image {
         height: 220px;
     }
-    
+
     .gallery-item-title {
         font-size: 1.125rem;
     }
@@ -1581,33 +1591,33 @@ body {
     .map-section-full {
         padding: 1.5rem;
     }
-    
+
     .contact-info-modern h3,
     .map-header-modern h3 {
         font-size: 1.5rem;
     }
-    
+
     .contact-card {
         padding: 1.5rem;
     }
-    
+
     .contact-icon {
         width: 60px;
         height: 60px;
         font-size: 1.25rem;
     }
-    
+
     .whatsapp-icon-large {
         width: 60px;
         height: 60px;
         font-size: 2rem;
     }
-    
+
     .whatsapp-btn-large {
         padding: 0.875rem 1.5rem;
         font-size: 0.95rem;
     }
-    
+
     .map-wrapper-full iframe {
         height: 300px;
     }
@@ -1615,15 +1625,15 @@ body {
     .footer {
         padding: 3rem 0 0;
     }
-    
+
     .footer-map-section {
         padding: 2rem 0;
     }
-    
+
     .map-details {
         gap: 1rem;
     }
-    
+
     .footer-map {
         height: 250px;
     }
@@ -1631,7 +1641,7 @@ body {
     .gallery-item-content {
         padding: 1.25rem;
     }
-    
+
     .gallery-item-image {
         height: 200px;
     }
@@ -1768,7 +1778,7 @@ body {
         align-items: center;
         text-align: center;
     }
-    
+
     .event-image-container {
         width: 100%;
         max-width: 300px;
@@ -1776,12 +1786,12 @@ body {
         margin-right: 0;
         margin-bottom: 1rem;
     }
-    
+
     .event-date {
         order: -1;
         margin-bottom: 1rem;
     }
-    
+
     .event-content {
         order: 1;
     }
@@ -1791,7 +1801,9 @@ body {
     .event-image-container {
         height: 150px;
     }
-}/* Styles supplémentaires pour les images d'événements */
+}
+
+/* Styles supplémentaires pour les images d'événements */
 
 /* Container pour les images d'événements */
 .event-image-container {
@@ -1915,16 +1927,22 @@ body {
 
 /* Animations pour le modal */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scaleIn {
-    from { 
+    from {
         opacity: 0;
         transform: scale(0.8);
     }
-    to { 
+
+    to {
         opacity: 1;
         transform: scale(1);
     }
@@ -1956,7 +1974,7 @@ body {
         align-items: center;
         text-align: center;
     }
-    
+
     .event-image-container {
         width: 100%;
         max-width: 300px;
@@ -1964,26 +1982,26 @@ body {
         margin-right: 0;
         margin-bottom: 1rem;
     }
-    
+
     .event-date {
         order: -1;
         margin-bottom: 1rem;
     }
-    
+
     .event-content {
         order: 1;
     }
-    
+
     .modal-content {
         max-width: 95%;
         margin: 0 auto;
     }
-    
+
     .close-modal {
         top: -30px;
         font-size: 2rem;
     }
-    
+
     .modal-caption {
         font-size: 1rem;
         padding: 0.75rem;
@@ -1994,13 +2012,164 @@ body {
     .event-image-container {
         height: 150px;
     }
-    
+
     .modal-content img {
         max-height: 70vh;
     }
-    
+
     .close-modal {
         top: -25px;
         font-size: 1.75rem;
+    }
+}
+
+/* lightbox css */
+/* Image Lightbox Styles */
+.event-image-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 8px;
+}
+
+.event-image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 10000;
+}
+
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-caption {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .event-image {
+        height: 150px;
+    }
+
+    .lightbox-image {
+        max-width: 95vw;
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: -35px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .lightbox-caption {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-image {
+        height: 120px;
+    }
+
+    .lightbox-image {
+        max-height: 70vh;
     }
 }

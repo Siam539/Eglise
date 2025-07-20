@@ -149,15 +149,15 @@ function animateStats() {
     const heroDetailNumbers = document.querySelectorAll('.hero-detail-number');
     if (heroDetailNumbers.length > 0) {
         const stats = [{
-                element: heroDetailNumbers[0],
-                target: 120,
-                suffix: ''
-            },
-            {
-                element: heroDetailNumbers[1],
-                target: 2,
-                suffix: 'h'
-            }
+            element: heroDetailNumbers[0],
+            target: 120,
+            suffix: ''
+        },
+        {
+            element: heroDetailNumbers[1],
+            target: 2,
+            suffix: 'h'
+        }
         ];
 
         stats.forEach(stat => {
@@ -181,20 +181,20 @@ function animateStats() {
     const heroStatNumbers = document.querySelectorAll('.hero-stat-number');
     if (heroStatNumbers.length > 0) {
         const alternativeStats = [{
-                element: heroStatNumbers[0],
-                target: 250,
-                suffix: '+'
-            },
-            {
-                element: heroStatNumbers[1],
-                target: 15,
-                suffix: ''
-            },
-            {
-                element: heroStatNumbers[2],
-                target: 50,
-                suffix: '+'
-            }
+            element: heroStatNumbers[0],
+            target: 250,
+            suffix: '+'
+        },
+        {
+            element: heroStatNumbers[1],
+            target: 15,
+            suffix: ''
+        },
+        {
+            element: heroStatNumbers[2],
+            target: 50,
+            suffix: '+'
+        }
         ];
 
         alternativeStats.forEach(stat => {
@@ -229,15 +229,6 @@ const heroSection = document.getElementById('home');
 if (heroSection) {
     heroObserver.observe(heroSection);
 }
-
-// Parallax Effect for Hero (only on pages with hero section)
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-});
 
 // Add interactive glow to buttons
 document.querySelectorAll('.btn, .nav-cta, .program-join-btn').forEach(btn => {
@@ -277,13 +268,6 @@ function updateOnScroll() {
 
     ticking = false;
 }
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        requestAnimationFrame(updateOnScroll);
-        ticking = true;
-    }
-});
 
 // WhatsApp button interaction
 document.querySelectorAll('.whatsapp-btn-large').forEach(btn => {
@@ -374,5 +358,83 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!document.getElementById(id)) {
             console.warn(`Element necesar lipsă: ${id}`);
         }
+    });
+});
+
+// Image Lightbox Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize lightbox for event images
+    const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
+
+    // Open lightbox function
+    function openLightbox(imageSrc, imageTitle) {
+        if (lightboxModal && lightboxImage && lightboxCaption) {
+            lightboxModal.classList.add('active');
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = imageTitle;
+            lightboxCaption.textContent = imageTitle;
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+            console.log('Lightbox deschis pentru:', imageTitle);
+        }
+    }
+
+    // Close lightbox function
+    function closeLightbox() {
+        if (lightboxModal) {
+            lightboxModal.classList.remove('active');
+
+            // Re-enable body scroll
+            document.body.style.overflow = '';
+
+            // Clear image
+            if (lightboxImage) {
+                lightboxImage.src = '';
+            }
+            console.log('Lightbox închis');
+        }
+    }
+
+    // Add click event to all lightbox triggers
+    lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const imageSrc = this.getAttribute('data-image');
+            const imageTitle = this.getAttribute('data-title');
+            openLightbox(imageSrc, imageTitle);
+        });
+    });
+
+    // Close lightbox events
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxBackdrop) {
+        lightboxBackdrop.addEventListener('click', closeLightbox);
+    }
+
+    // Close on ESC key (extending existing keyboard functionality)
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+});
+
+// Add hover effect to lightbox triggers
+document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+    trigger.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.02)';
+    });
+
+    trigger.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
     });
 });

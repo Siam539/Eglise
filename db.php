@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $user = 'root';
-$password = 'root'; // ← mot de passe correct pour MAMP
+$password = ''; // ← mot de passe correct pour MAMP
 $dbname = 'eglise';
 
 $conn = new mysqli($host, $user, $password, $dbname);
