@@ -11,7 +11,7 @@
         <div class="events-container scroll-reveal">
             <div class="events-list">
                 <?php
-                $res = $conn->query("SELECT * FROM evenements ORDER BY date ASC");
+                $res = $conn->query("SELECT * FROM evenements ORDER BY date DESC");
                 while ($row = $res->fetch_assoc()):
                     $date = date_create($row['date']);
                 ?>
@@ -19,6 +19,7 @@
                         <div class="event-date">
                             <div class="event-day"><?= date_format($date, 'd') ?></div>
                             <div class="event-month"><?= strtoupper(date_format($date, 'M')) ?></div>
+                            <div class="event-year"><?= date_format($date, 'Y') ?></div>
                         </div>
 
                         <!-- Section image de l'événement -->

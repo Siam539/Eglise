@@ -1,10 +1,21 @@
-<?php include 'db.php'; ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit();
+}
+
+include 'db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ro">
 
 <head>
     <meta charset="UTF-8" />
     <title>Admin - Biserica Harul</title>
+    <link rel="shortcut icon" href="uploads/harul-geneva-logo-web.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <style>
@@ -499,7 +510,7 @@
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
                 <h1 style="margin: 0;">🛠️ Panoul de Administrare</h1>
-                <a href="index.php" class="logout-btn">
+                <a href="logout.php" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
                     Deconectare
                 </a>

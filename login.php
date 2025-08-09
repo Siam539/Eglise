@@ -1,17 +1,14 @@
 <?php
 session_start();
 
+if (isset($_SESSION['admin'])) {
+    header("Location: admin.php");
+    exit();
+}
+
 // Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $host = "localhost";
-    $user = "root";
-    $password = ""; // modifie si nécessaire
-    $dbname = "eglise";
-
-    $conn = new mysqli($host, $user, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Eroare de conexiune la baza de date: " . $conn->connect_error);
-    }
+    include 'db.php';
 
     $utilisateur = $_POST['utilisateur'];
     $motdepasse = $_POST['motdepasse'];
@@ -49,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexiune Admin - Biserica Harul</title>
+    <link rel="shortcut icon" href="uploads/harul-geneva-logo-web.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <style>
